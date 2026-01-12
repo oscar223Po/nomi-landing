@@ -1,0 +1,41 @@
+<header
+	data-fls-header
+	data-fls-header-scroll
+	data-fls-header-scroll-show
+	class="header"
+>
+	<div class="header__container">
+		<div class="header__body">
+			<a
+				href="#"
+				class="header__logo header__logo--icon-logo"
+			>
+				<img
+					src="@img/logo-name-wh.svg"
+					alt="Image"
+				/>
+			</a>
+			<include
+				src="@components/layout/menu/menu.html"
+				locals='{"active":"[[active]]"}'
+			></include>
+			<div class="header__action">
+				<button
+					type="button"
+					class="header__button header__button--icon-telegram"
+				>
+					<span>Связаться с нами</span>
+				</button>
+				<button
+					type="button"
+					data-fls-menu
+					class="header__icon"
+				>
+					<div class="icon-menu">
+						<span></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>

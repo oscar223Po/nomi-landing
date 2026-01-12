@@ -1,0 +1,29 @@
+@font-face { 
+	font-family: "iconfont"; 
+	font-display: swap;
+	src: url("/Users/sell/Main/nomi-landing/src/assets/svgicons/preview/iconfont.woff2?b1706bde0c042f8ab8626da49d092202") format("woff2"); 
+} 
+[class*="--icon-"]::before{
+	font-family: iconfont; 
+}
+	[class*="--icon-tg"]::before { 
+		content: "\f101"; 
+	} 
+	[class*="--icon-telegram"]::before { 
+		content: "\f102"; 
+	} 
+	[class*="--icon-logo"]::before { 
+		content: "\f103"; 
+	} 
+	[class*="--icon-link"]::before { 
+		content: "\f104"; 
+	} 
+	[class*="--icon-check"]::before { 
+		content: "\f105"; 
+	} 
+	[class*="--icon-cancel"]::before { 
+		content: "\f106"; 
+	} 
+	[class*="--icon-arrow"]::before { 
+		content: "\f107"; 
+	} 

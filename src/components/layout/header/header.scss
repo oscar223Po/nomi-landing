@@ -1,0 +1,105 @@
+.header {
+	z-index: 10;
+	position: relative;
+	transition: background-color 0.3s, box-shadow 0.3s;
+	// .header__container
+	&__container {
+		padding-block: 8px;
+		@media (max-width: toEm($mobile)) {
+			padding-block: 16px;
+		}
+	}
+	// .header__body
+	&__body {
+		gap: 10px;
+		overflow: hidden;
+		align-items: center;
+		@media (min-width: toEm($tablet)) {
+			display: grid;
+			grid-template-columns: 185px auto 185px;
+			box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+		}
+		@media (max-width: toEm($tablet)) {
+			display: flex;
+			justify-content: space-between;
+		}
+		@media (min-width: toEm($mobile)) {
+			border-radius: 6px;
+			padding-block: 6px;
+			padding-left: 15px;
+			padding-right: 6px;
+			background-color: #fff;
+		}
+	}
+	// .header__logo
+	&__logo {
+		gap: 9px;
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		transition: opacity 0.3s;
+		&::before {
+			font-size: 24px;
+			color: $primaryColor;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+	// .header__action
+	&__action {
+		gap: 8px;
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+	}
+	// .header__button
+	&__button {
+		height: 42px;
+		color: #fff;
+		font-weight: 500;
+		border-radius: 7px;
+		align-items: center;
+		display: inline-flex;
+		justify-content: center;
+		letter-spacing: -0.02em;
+		background-color: $primaryColor;
+		transition: background-color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $mainColor;
+			}
+		}
+		@media (min-width: toEm($mobile)) {
+			width: 100%;
+			&::before {
+				display: none;
+			}
+		}
+		@media (max-width: toEm($tablet)) {
+			padding-inline: 30px;
+		}
+		@media (max-width: toEm($mobile)) {
+			padding: 0;
+			aspect-ratio: 1;
+			span {
+				display: none;
+			}
+		}
+	}
+	// .header__icon
+	&__icon {
+		height: 42px;
+		display: flex;
+		aspect-ratio: 1;
+		border-radius: 7px;
+		align-items: center;
+		justify-content: center;
+		background-color: $primaryColor;
+		@media (min-width: toEm($mobile)) {
+			display: none;
+		}
+	}
+}

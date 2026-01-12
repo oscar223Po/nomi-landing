@@ -1,0 +1,73 @@
+<div class="header__menu menu">
+	<div data-fls-menu class="menu__overlay"></div>
+	<nav class="menu__body">
+		<div class="menu__above">
+			<div class="menu__head">
+				<div class="menu__logo menu__logo--icon-logo">
+					<img
+						src="@img/logo-name-bk.svg"
+						alt="Image"
+					/>
+				</div>
+				<button
+					type="button"
+					data-fls-menu
+					class="menu__cancel menu__cancel--icon-cancel"
+				></button>
+			</div>
+			<ul class="menu__list">
+				<each
+					loop='item in [
+					{"href": "#","ancor": "Главная"},
+					{"href": "#","ancor": "Возможности"},
+					{"href": "#","ancor": "Тарифы"},
+					{"href": "#","ancor": "FAQ"},
+					{"href": "#","ancor": "Контакты"}
+				]'
+				>
+					<if condition="'[[active]]' === '[[item.ancor]]'">
+						<li class="menu__item">
+							<a
+								href="[[item.href]]"
+								class="menu__link menu__link--active"
+							>
+								[[item.ancor]]
+							</a>
+						</li>
+					</if>
+					<else>
+						<li class="menu__item">
+							<a
+								href="[[item.href]]"
+								class="menu__link"
+							>
+								<span>[[item.ancor]]</span>
+							</a>
+						</li>
+					</else>
+				</each>
+			</ul>
+		</div>
+		<div class="menu__action">
+			<button
+				type="button"
+				class="menu__button menu__button--white"
+			>
+				Связаться с нами
+			</button>
+			<button
+				type="button"
+				class="menu__button menu__button--muted"
+			>
+				Перейти в телеграм
+			</button>
+		</div>
+	</nav>
+</div>
+
+<!-- 
+<fetch url="@components/layout/menu/menu.json">
+	<each loop='item in response'>
+	</each>
+</fetch>
+-->

@@ -1,0 +1,25 @@
+[data-fls-header-scroll] {
+	&.--header-scroll {
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 50;
+		position: sticky;
+		@media (max-width: toEm($mobile)) {
+			background-color: #fff;
+			box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+		}
+	}
+}
+
+[data-fls-header-scroll-show] {
+	@media (min-width: toEm($mobile)) {
+		&.--header-scroll {
+			translate: 0px -100%;
+			transition: translate 0.3s;
+		}
+		&.--header-show {
+			translate: 0 0;
+		}
+	}
+}
