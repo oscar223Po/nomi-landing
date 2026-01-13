@@ -3,9 +3,10 @@
 	&__decide {
 	}
 }
+// Decide
 .decide {
-	padding-top: 68px;
-	padding-bottom: 132px;
+	@include adaptiveValue("padding-top", 68, 82);
+	@include adaptiveValue("padding-bottom", 132, 72);
 	// .decide__title
 	&__title {
 		text-wrap: balance;

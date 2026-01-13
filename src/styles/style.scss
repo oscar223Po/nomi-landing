@@ -11,7 +11,6 @@
 // Стилі тега BODY
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 body {
-	height: 1500px;
 	min-width: #{$minWidth}px;
 	color: $mainColor;
 	font-family: $fontFamily;
@@ -38,6 +37,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: clip;
+	padding-bottom: 50px;
 	// Притискаємо footer
 	> main {
 		flex: 1 1 auto;
@@ -107,10 +107,21 @@ body {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [class*="--title"] {
-	letter-spacing: -0.03em;
+	letter-spacing: -0.48px;
 	text-transform: uppercase;
 	font-family: $fontHalvarBreit;
 	@include adaptiveValue("font-size", 57, 24);
+	span {
+		color: $primaryColor;
+	}
+}
+
+[class*="--subtitle"] {
+	line-height: 1.15;
+	letter-spacing: -0.48px;
+	text-transform: uppercase;
+	font-family: $fontHalvarBreit;
+	@include adaptiveValue("font-size", 40, 18);
 	span {
 		color: $primaryColor;
 	}

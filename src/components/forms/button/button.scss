@@ -1,14 +1,19 @@
 //<BUTTONS (a.btn+tab)>
 // Сніппет (HTML): btn
 .button {
+	gap: 10px;
 	color: #fff;
+	line-height: 1.2;
 	font-weight: 500;
+	text-align: center;
+	padding-block: 5px;
 	border-radius: 7px;
 	align-items: center;
 	display: inline-flex;
 	padding-inline: 35px;
 	justify-content: center;
 	letter-spacing: -0.32px;
+	flex-direction: row-reverse;
 	background-color: $primaryColor;
 	transition:
 		color 0.3s,
@@ -20,7 +25,7 @@
 		}
 	}
 	&--lg {
-		height: 53px;
+		min-height: 53px;
 		padding-inline: 30px;
 	}
 	&--mn {
@@ -29,6 +34,9 @@
 	&--white {
 		color: $mainColor;
 		background-color: #fff;
+		&::before {
+			color: $primaryColor;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #fff;
