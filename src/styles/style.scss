@@ -59,7 +59,7 @@ body {
 
 @if ($responsiveType==1) {
 	// Чуйна
-	[class*='__container'] {
+	[class*="__container"] {
 		@if ($maxWidthContainer>0) {
 			max-width: #{$containerWidth}px;
 			margin: 0 auto;
@@ -69,22 +69,14 @@ body {
 				padding-left: #{math.div($containerPadding, 2)}px;
 				padding-right: #{math.div($containerPadding, 2)}px;
 			} @else {
-				@include adaptiveValue(
-					'padding-left',
-					math.div($containerPadding, 2),
-					15
-				);
-				@include adaptiveValue(
-					'padding-right',
-					math.div($containerPadding, 2),
-					15
-				);
+				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
+				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
 			}
 		}
 	}
 } @else {
 	// Брейк-поїнтами
-	[class*='__container'] {
+	[class*="__container"] {
 		margin: 0 auto;
 		@if ($maxWidthContainer>0) {
 			max-width: #{$maxWidthContainer}px;
@@ -113,3 +105,20 @@ body {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Загальні стилі для усього сайту
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[class*="--title"] {
+	letter-spacing: -0.03em;
+	text-transform: uppercase;
+	font-family: $fontHalvarBreit;
+	@include adaptiveValue("font-size", 57, 24);
+	span {
+		color: $primaryColor;
+	}
+}
+
+[class*="--text"] {
+	line-height: 1.35;
+	letter-spacing: -0.32px;
+	color: rgba(51, 51, 51, 0.73);
+	@include adaptiveValue("font-size", 16, 12);
+}

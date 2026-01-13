@@ -1,41 +1,67 @@
 /*
-Документація по роботі у шаблоні: 
-Документація слайдера: https://swiperjs.com/
-Сніппет(HTML): swiper
+Документация по работе в шаблоне:
+Документация слайдера: https://swiperjs.com/
+Сниппет (HTML): swiper
 */
 
-// Підключаємо слайдер Swiper з node_modules
-// При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
-// Приклад: { Navigation, Autoplay }
-import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+// Подключаем слайдер Swiper из node_modules
+// При необходимости подключаем дополнительные модули слайдера,
+// указывая их в {} через запятую
+// Пример: { Navigation, Autoplay }
+import Swiper from 'swiper'
+import { Navigation } from 'swiper/modules'
 /*
-Основні модулі слайдера:
-Navigation, Pagination, Autoplay, 
+Основные модули слайдера:
+Navigation, Pagination, Autoplay,
 EffectFade, Lazy, Manipulation
-Детальніше дивись https://swiperjs.com/
+Подробнее смотри https://swiperjs.com/
 */
 
-// Стилі Swiper
-// Підключення базових стилів
-import "./slider.scss";
-// Повний набір стилів з node_modules
+// Стили Swiper
+// Подключение базовых стилей
+import './slider.scss'
+// Полный набор стилей из node_modules
 // import 'swiper/css/bundle';
 
-// Ініціалізація слайдерів
+// =====================================================
+// ПЕРЕМЕННЫЕ
+// =====================================================
+
+// Экземпляр decide-слайдера
+let decideSlider = null
+
+// Брейкпоинт только для decide-слайдера
+const decideBreakpoint = window.matchMedia('(max-width: 768px)')
+
+// =====================================================
+// ИНИЦИАЛИЗАЦИЯ ОБЫЧНЫХ СЛАЙДЕРОВ
+// (ЗДЕСЬ БУДУТ ВСЕ ОСТАЛЬНЫЕ СЛАЙДЕРЫ)
+// =====================================================
 function initSliders() {
-	// Список слайдерів
-	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // <- Вказуємо склас потрібного слайдера
-		// Створюємо слайдер
-		new Swiper('.swiper', { // <- Вказуємо склас потрібного слайдера
-			// Підключаємо модулі слайдера
-			// для конкретного випадку
+	// Пример: другие слайдеры работают всегда
+	// if (document.querySelector('.hero__slider')) {
+	// 	new Swiper('.hero__slider', {
+	// 		modules: [Navigation],
+	// 		slidesPerView: 1,
+	// 		speed: 600
+	// 	})
+	// }
+}
+
+// =====================================================
+// DECIDE SLIDER (ТОЛЬКО >= 768px)
+// =====================================================
+function initDecideSlider() {
+	if (!decideSlider && document.querySelector('.decide__slider')) {
+		decideSlider = new Swiper('.decide__slider', {
+			// <- Указываем класс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
+			slidesPerView: 1.3,
+			spaceBetween: 10,
 			//autoHeight: true,
 			speed: 800,
 
@@ -46,7 +72,7 @@ function initSliders() {
 			//lazy: true,
 
 			/*
-			// Ефекти
+			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 3000,
@@ -54,7 +80,7 @@ function initSliders() {
 			},
 			*/
 
-			// Пагінація
+			// Пагинация
 			/*
 			pagination: {
 				el: '.swiper-pagination',
@@ -70,13 +96,14 @@ function initSliders() {
 			},
 			*/
 
-			// Кнопки "вліво/вправо"
+			// Кнопки «влево / вправо»
 			navigation: {
 				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				nextEl: '.swiper-button-next'
 			},
+
 			/*
-			// Брейкпоінти
+			// Брейкпоинты
 			breakpoints: {
 				640: {
 					slidesPerView: 1,
@@ -97,12 +124,39 @@ function initSliders() {
 				},
 			},
 			*/
-			// Події
-			on: {
 
-			}
-		});
+			// События
+			on: {}
+		})
 	}
 }
-document.querySelector('[data-fls-slider]') ?
-	window.addEventListener("load", initSliders) : null
+
+function destroyDecideSlider() {
+	if (decideSlider) {
+		// Полностью уничтожаем слайдер и очищаем inline-стили
+		decideSlider.destroy(true, true)
+		decideSlider = null
+	}
+}
+
+function decideBreakpointChecker() {
+	if (decideBreakpoint.matches) {
+		initDecideSlider()
+	} else {
+		destroyDecideSlider()
+	}
+}
+
+// =====================================================
+// INIT
+// =====================================================
+document.querySelector('[data-fls-slider]')
+	? window.addEventListener('load', () => {
+			// 1. Инициализируем ВСЕ обычные слайдеры
+			initSliders()
+
+			// 2. Отдельная логика ТОЛЬКО для decide-слайдера
+			decideBreakpointChecker()
+			decideBreakpoint.addEventListener('change', decideBreakpointChecker)
+	  })
+	: null

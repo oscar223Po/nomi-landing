@@ -1,5 +1,4 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import { FLS } from "@js/common/functions.js";
 
 import './scroll.scss'
 

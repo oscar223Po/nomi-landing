@@ -2,10 +2,12 @@
 // Налаштування стилів за замовченням
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-@import url('https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");
 
-$fontFamily: 'Inter Tight', sans-serif; // Шрифт за замовчуванням
-$fontHalvarBreit: 'HalvarBreit', sans-serif; // Шрифт за замовчуванням
+$fontFamily: "Inter Tight", sans-serif; // Шрифт за замовчуванням
+$fontBeiruti: "Beiruti", sans-serif; // Шрифт за замовчуванням
+$fontHalvarBreit: "HalvarBreit", sans-serif; // Шрифт за замовчуванням
 $fontSize: 16; // Розмір шрифту за замовченням (де 16 - розмір шрифту за замовчуванням з макету)
 
 // Основні кольори

@@ -1,14 +1,12 @@
 <div class="header__menu menu">
-	<div data-fls-menu class="menu__overlay"></div>
+	<div
+		data-fls-menu
+		class="menu__overlay"
+	></div>
 	<nav class="menu__body">
 		<div class="menu__above">
 			<div class="menu__head">
-				<div class="menu__logo menu__logo--icon-logo">
-					<img
-						src="@img/logo-name-bk.svg"
-						alt="Image"
-					/>
-				</div>
+				<div class="menu__logo menu__logo--icon-logo">Nomi</div>
 				<button
 					type="button"
 					data-fls-menu
@@ -49,25 +47,22 @@
 			</ul>
 		</div>
 		<div class="menu__action">
-			<button
-				type="button"
-				class="menu__button menu__button--white"
+			<a
+				data-fls-button
+				target="_blank"
+				href="https://web.telegram.org/"
+				class="menu__button button button--white button--lg"
 			>
 				Связаться с нами
-			</button>
-			<button
-				type="button"
-				class="menu__button menu__button--muted"
+			</a>
+			<a
+				data-fls-button
+				target="_blank"
+				href="https://web.telegram.org/"
+				class="menu__button button button--blure button--lg"
 			>
 				Перейти в телеграм
-			</button>
+			</a>
 		</div>
 	</nav>
 </div>
-
-<!-- 
-<fetch url="@components/layout/menu/menu.json">
-	<each loop='item in response'>
-	</each>
-</fetch>
--->

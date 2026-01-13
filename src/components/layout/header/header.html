@@ -6,25 +6,24 @@
 >
 	<div class="header__container">
 		<div class="header__body">
-			<a
-				href="#"
-				class="header__logo header__logo--icon-logo"
-			>
-				<img
-					src="@img/logo-name-wh.svg"
-					alt="Image"
-				/>
-			</a>
+			<div class="header__logo">
+				<a
+					href="#"
+					class="--icon-logo"
+				>
+					Nomi
+				</a>
+			</div>
 			<include
 				src="@components/layout/menu/menu.html"
 				locals='{"active":"[[active]]"}'
 			></include>
 			<div class="header__action">
 				<a
+					data-fls-button
 					target="_blank"
 					href="https://web.telegram.org/"
-					type="button"
-					class="header__button header__button--icon-telegram"
+					class="header__button header__button--icon-telegram button button--mn"
 				>
 					<span>Связаться с нами</span>
 				</a>

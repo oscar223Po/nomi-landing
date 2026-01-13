@@ -1,0 +1,72 @@
+.page {
+	// .page__decide
+	&__decide {
+	}
+}
+.decide {
+	padding-top: 68px;
+	padding-bottom: 132px;
+	// .decide__title
+	&__title {
+		text-wrap: balance;
+		@media (min-width: toEm($mobile)) {
+			text-align: center;
+		}
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 80, 28);
+		}
+	}
+	// .decide__slider
+	&__slider {
+		overflow: visible;
+	}
+	// .decide__wrapper
+	&__wrapper {
+		@media (min-width: toEm($mobile)) {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+			@include adaptiveValue("gap", 30, 15, 2, $containerWidth, 767.98);
+		}
+	}
+}
+.item-decide {
+	padding: 22px;
+	overflow: hidden;
+	border-radius: 19px;
+	background-color: #fff;
+	transition: box-shadow 0.3s;
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+	@media (min-width: toEm($mobile)) {
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow:
+					rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+					rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+			}
+		}
+	}
+	@media (max-width: toEm($mobile)) {
+		padding: 15px;
+		border-radius: 12px;
+	}
+	img {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	// .item-decide__content
+	&__content {
+		gap: 16px;
+		display: grid;
+		text-wrap: balance;
+		@media (max-width: toEm($mobile)) {
+			gap: 10px;
+		}
+	}
+	// .item-decide__title
+	&__title {
+		font-weight: 600;
+		line-height: 1.18;
+		letter-spacing: -0.32px;
+		@include adaptiveValue("font-size", 21, 16);
+	}
+}
