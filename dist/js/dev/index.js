@@ -4290,9 +4290,6 @@ const decideBreakpoint = window.matchMedia("(max-width: 768px)");
 function initDecideSlider() {
   if (!decideSlider && document.querySelector(".decide__slider")) {
     decideSlider = new Swiper(".decide__slider", {
-      // <- Указываем класс нужного слайдера
-      // Подключаем модули слайдера
-      // для конкретного случая
       modules: [Navigation],
       observer: true,
       observeParents: true,
