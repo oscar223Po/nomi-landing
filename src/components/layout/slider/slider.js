@@ -31,7 +31,7 @@ import './slider.scss'
 let decideSlider = null
 
 // Брейкпоинт только для decide-слайдера
-const decideBreakpoint = window.matchMedia('(max-width: 768px)')
+const decideBreakpoint = window.matchMedia('(max-width: 767.98px)')
 
 // =====================================================
 // ИНИЦИАЛИЗАЦИЯ ОБЫЧНЫХ СЛАЙДЕРОВ

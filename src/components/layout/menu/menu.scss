@@ -114,8 +114,8 @@
 				position: absolute;
 				right: 0;
 				top: 0;
-				border-right: 2px solid #218c74;
-				border-top: 2px solid #218c74;
+				border-right: 2px solid $primaryColor;
+				border-top: 2px solid $primaryColor;
 				-webkit-transition: 0.3s;
 				-moz-transition: 0.3s;
 				transition: 0.3s;
@@ -129,8 +129,8 @@
 				position: absolute;
 				left: 0;
 				bottom: 0;
-				border-left: 2px solid #218c74;
-				border-bottom: 2px solid #218c74;
+				border-left: 2px solid $primaryColor;
+				border-bottom: 2px solid $primaryColor;
 				-webkit-transition: 0.3s;
 				-moz-transition: 0.3s;
 				transition: 0.3s;
@@ -145,8 +145,8 @@
 					position: absolute;
 					left: 0;
 					top: 0;
-					border-top: 2px solid #218c74;
-					border-left: 2px solid #218c74;
+					border-top: 2px solid $primaryColor;
+					border-left: 2px solid $primaryColor;
 					-webkit-transition: 0.3s;
 					-moz-transition: 0.3s;
 					transition: 0.3s;
@@ -160,8 +160,8 @@
 					position: absolute;
 					right: 0;
 					bottom: 0;
-					border-right: 2px solid #218c74;
-					border-bottom: 2px solid #218c74;
+					border-right: 2px solid $primaryColor;
+					border-bottom: 2px solid $primaryColor;
 					-webkit-transition: 0.3s;
 					-moz-transition: 0.3s;
 					transition: 0.3s;
@@ -170,7 +170,7 @@
 			}
 			@media (any-hover: hover) {
 				&:hover {
-					color: #218c74;
+					color: $primaryColor;
 					&::before {
 						opacity: 1;
 						right: 5px;

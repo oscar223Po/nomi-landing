@@ -4532,7 +4532,7 @@ function Navigation({
   });
 }
 let decideSlider = null;
-const decideBreakpoint = window.matchMedia("(max-width: 768px)");
+const decideBreakpoint = window.matchMedia("(max-width: 767.98px)");
 function initDecideSlider() {
   if (!decideSlider && document.querySelector(".decide__slider")) {
     decideSlider = new Swiper(".decide__slider", {

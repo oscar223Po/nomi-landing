@@ -5,6 +5,9 @@
 	// .page__faq
 	&__faq {
 	}
+	// .page__rates
+	&__rates {
+	}
 }
 // Decide
 .decide {
@@ -107,5 +110,149 @@
 	&__spollers {
 		margin: 0 auto;
 		max-width: 1100px;
+	}
+}
+// Rates
+.rates {
+	@include adaptiveValue("padding-top", 66, 40);
+	// .rates__title
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 45, 20);
+		}
+	}
+	// .rates__cards
+	&__cards {
+		gap: 20px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+.card-rates {
+	padding: 8px;
+	flex: 1 1 350px;
+	border-radius: 24px;
+	background-color: #fff;
+	transition: box-shadow 0.3s;
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+	&:nth-child(2) {
+		color: #fff;
+		background-color: $primaryColor;
+		.card-rates__head {
+			background-color: #759efa;
+			border: 1px solid rgba(231, 235, 243, 0.37);
+			.--text {
+				color: #fff;
+				font-weight: 500;
+			}
+		}
+	}
+	@media (min-width: toEm($mobile)) {
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow:
+					rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+					rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+			}
+		}
+	}
+	// .card-rates__head
+	&__head {
+		border-radius: 15px;
+		border: 1px solid #e7ebf3;
+		background-color: $grayColor;
+		padding: 40px 25px 25px 25px;
+		> * {
+			margin-bottom: 15px;
+		}
+		> *:last-child {
+			margin-bottom: 0;
+		}
+		&:not(:last-child) {
+			margin-bottom: 18px;
+		}
+		@media (max-width: toEm($mobile)) {
+			padding: 29px 17px 17px 17px;
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			padding: 20px 14px 14px 14px;
+		}
+	}
+	// .card-rates__title
+	&__title {
+		margin-bottom: 11px;
+	}
+	// .card-rates__text
+	&__text {
+		margin-bottom: 18px;
+	}
+	// .card-rates__price
+	&__price {
+		font-weight: 500;
+		letter-spacing: -0.48px;
+		text-transform: uppercase;
+		@include adaptiveValue("font-size", 49, 30);
+	}
+	// .card-rates__button
+	&__button {
+		&.button--white {
+			@media (any-hover: hover) {
+				&:hover {
+					color: $mainColor;
+					background-color: #fff;
+					box-shadow:
+						rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+						rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+				}
+			}
+		}
+	}
+	// .card-rates__below
+	&__below {
+		padding-inline: 25px;
+		padding-bottom: 20px;
+		@media (max-width: toEm($mobile)) {
+			padding-inline: 20px;
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			padding-inline: 14px;
+		}
+	}
+	// .card-rates__label
+	&__label {
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1.35;
+		letter-spacing: -0.32px;
+		&:not(:last-child) {
+			margin-bottom: 7px;
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			font-size: 13px;
+		}
+	}
+	// .card-rates__item-list
+	&__item-list {
+		gap: 7px;
+		display: flex;
+		font-size: 15px;
+		line-height: 2.06;
+		align-items: center;
+		letter-spacing: -0.32px;
+		&::before {
+			height: 12px;
+			display: flex;
+			min-width: 12px;
+			font-size: 6.5px;
+			color: $mainColor;
+			border-radius: 50%;
+			align-items: center;
+			justify-content: center;
+			background-color: #c4e861;
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			font-size: 13px;
+		}
 	}
 }
