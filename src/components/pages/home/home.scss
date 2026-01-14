@@ -2,6 +2,9 @@
 	// .page__decide
 	&__decide {
 	}
+	// .page__faq
+	&__faq {
+	}
 }
 // Decide
 .decide {
@@ -69,5 +72,40 @@
 		line-height: 1.18;
 		letter-spacing: -0.32px;
 		@include adaptiveValue("font-size", 21, 16);
+	}
+}
+// Faq
+.faq {
+	padding-block: 70px;
+	// .faq__container
+	&__container {
+		@media (max-width: toEm($mobile)) {
+			margin-inline: -15px;
+		}
+	}
+	// .faq__body
+	&__body {
+		border-radius: 35px;
+		padding-inline: 30px;
+		background-color: #fff;
+		box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+		@include adaptiveValue("padding-top", 78, 27);
+		@include adaptiveValue("padding-bottom", 158, 67);
+		@media (max-width: toEm($mobile)) {
+			border-radius: 0;
+			padding-inline: 15px;
+		}
+	}
+	// .faq__title
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 26);
+		}
+	}
+	// .faq__spollers
+	&__spollers {
+		margin: 0 auto;
+		max-width: 1100px;
 	}
 }

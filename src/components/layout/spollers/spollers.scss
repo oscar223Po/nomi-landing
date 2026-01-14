@@ -3,61 +3,111 @@
 
 // Блок зі спойлерами
 .spollers {
-	display: grid;
 	gap: 15px;
+	display: grid;
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+	border-radius: 10px;
+	transition: box-shadow 0.3s;
+	background-color: $grayColor;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+	@media (min-width: toEm($mobile)) {
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow:
+					rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+					rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+			}
+		}
+	}
 }
 // Заголовок спойлера
 .spollers__title {
+	gap: 15px;
 	width: 100%;
+	padding: 24px;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
-	padding: 10px 15px;
-	border-radius: 5px;
-	position: relative;
 	list-style: none;
+	position: relative;
+	display: inline-flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
 	}
 	.--spoller-init & {
 		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
 		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
+			color: #fff;
+			display: flex;
+			font-size: 8px;
+			min-width: 25px;
+			height: 25px;
+			content: "\f103";
+			border-radius: 50%;
+			align-items: center;
+			justify-content: center;
+			font-family: "iconfont";
+			padding: 1px 0px 0px 1px;
+			background-color: $primaryColor;
 		}
 		&.--spoller-active {
 			&::before {
-				transform: translateX(-75%) rotate(-40deg);
+				content: "\f104";
+				padding: 0px 0px 5px 0px;
 			}
-			&::after {
-				transform: rotate(40deg);
-			}
+		}
+	}
+	@media (max-width: toEm($mobileSmall)) {
+		padding: 16px;
+	}
+}
+.spollers__inner-title {
+	gap: 35px;
+	display: flex;
+	font-weight: 500;
+	line-height: 1.35;
+	align-items: center;
+	letter-spacing: -0.32px;
+	@include adaptiveValue("font-size", 18, 14);
+	span {
+		font-size: 15px;
+		color: #aeaeae;
+		font-weight: 600;
+		letter-spacing: -0.32px;
+	}
+	@media (max-width: toEm($mobile)) {
+		span {
+			display: none;
 		}
 	}
 }
 // Контент спойлера
 .spollers__body {
-	padding: 20px;
-	border-radius: 5px;
-	border: 1px solid #eee;
+	padding: 0px 75px 65px 75px;
+	> * {
+		margin-bottom: 15px;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	p.n-m {
+		margin-bottom: 0;
+	}
+	ul {
+		li {
+			padding-left: 15px;
+		}
+	}
+	@media (max-width: toEm($mobile)) {
+		padding: 0px 24px 48px 24px;
+	}
+	@media (max-width: toEm($mobileSmall)) {
+		padding: 0px 16px 24px 16px;
+	}
 }
 
 // .--spoller-init & {
