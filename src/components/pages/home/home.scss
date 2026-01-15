@@ -8,6 +8,9 @@
 	// .page__rates
 	&__rates {
 	}
+	// .page__get
+	&__get {
+	}
 }
 // Decide
 .decide {
@@ -77,39 +80,202 @@
 		@include adaptiveValue("font-size", 21, 16);
 	}
 }
-// Faq
-.faq {
-	padding-block: 70px;
-	// .faq__container
+// Get
+.get {
+	overflow: hidden;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	// .get__container
 	&__container {
-		@media (max-width: toEm($mobile)) {
-			margin-inline: -15px;
+		position: relative;
+		&::before {
+			right: 0;
+			bottom: 0;
+			content: "";
+			z-index: -1;
+			translate: 50% 50%;
+			position: absolute;
+			background: url("@img/get/decore.svg") 0 0 / contain no-repeat;
+			@include adaptiveValue("width", 900, 240);
+			@include adaptiveValue("height", 900, 240);
+			@include adaptiveValue("right", 0, 60, 2, $containerWidth, 767.98);
+			@include adaptiveValue("bottom", 0, 60, 2, $containerWidth, 767.98);
+			@media (max-width: toEm($mobile)) {
+				right: 30px;
+				translate: 0 0;
+				@include adaptiveValue("bottom", 60, 0, 0, 767.98, 320);
+			}
 		}
 	}
-	// .faq__body
-	&__body {
-		border-radius: 35px;
-		padding-inline: 30px;
-		background-color: #fff;
-		box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-		@include adaptiveValue("padding-top", 78, 27);
-		@include adaptiveValue("padding-bottom", 158, 67);
-		@media (max-width: toEm($mobile)) {
-			border-radius: 0;
-			padding-inline: 15px;
-		}
-	}
-	// .faq__title
+	// .get__title
 	&__title {
-		text-align: center;
+		display: flex;
+		row-gap: 25px;
+		align-items: center;
+		flex-direction: column;
+		&::before {
+			opacity: 0.6;
+			color: $primaryColor;
+			@include adaptiveValue("font-size", 48, 23);
+		}
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 40, 26);
+			@include adaptiveValue("margin-bottom", 85, 20);
+		}
+		@media (min-width: toEm($mobile)) {
+			br {
+				display: none;
+			}
+		}
+		@media (max-width: toEm($mobile)) {
+			gap: 15px;
+			align-items: start;
 		}
 	}
-	// .faq__spollers
-	&__spollers {
-		margin: 0 auto;
-		max-width: 1100px;
+}
+.tabs-get {
+	// .tabs-get__navigation
+	&__navigation {
+		@media (min-width: toEm($mobile)) {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			&:not(:last-child) {
+				@include adaptiveValue("margin-bottom", 80, 45, 2, $containerWidth, 767.98);
+			}
+		}
+		@media (max-width: toEm($mobile)) {
+			gap: 23px;
+			width: 100%;
+			display: flex;
+			overflow: auto;
+			white-space: nowrap;
+			border-bottom: 1px solid rgba(#000, 0.14);
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	// .tabs-get__title
+	&__title {
+		@media (min-width: toEm($mobile)) {
+			aspect-ratio: 1;
+			position: relative;
+			border-radius: 50%;
+			transition: color 0.3s;
+			letter-spacing: -0.32px;
+			&::before {
+				top: 0;
+				left: 0;
+				scale: 1.1;
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				border-radius: 50%;
+				border: 1px solid rgba($mainColor, 0.33);
+				transition:
+					border 0.3s,
+					box-shadow 0.3s,
+					background-color 0.3s;
+			}
+			&.--tab-active {
+				z-index: 2;
+				color: #fff;
+				pointer-events: none;
+				&::before {
+					background-color: $primaryColor;
+					border: 1px solid $primaryColor;
+					box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+				}
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					z-index: 1;
+					&::before {
+						background-color: #fff;
+						box-shadow:
+							rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+							rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+					}
+				}
+			}
+		}
+		@media (max-width: toEm($mobile)) {
+			opacity: 0.5;
+			position: relative;
+			padding-bottom: 8px;
+			&::before {
+				left: 0;
+				width: 0;
+				bottom: 0;
+				content: "";
+				height: 1px;
+				position: absolute;
+				background-color: $primaryColor;
+			}
+			&.--tab-active {
+				opacity: 1;
+				font-weight: 500;
+				color: $primaryColor;
+				&::before {
+					width: 100%;
+				}
+			}
+		}
+	}
+	// .tabs-get__inner-title
+	&__inner-title {
+		@media (min-width: toEm($mobile)) {
+			display: flex;
+			line-height: 1.35;
+			position: relative;
+			flex-direction: column;
+			@include adaptiveValue("font-size", 20, 14, 2, $containerWidth, 767.98);
+			span {
+				font-weight: 400;
+				margin-bottom: -3px;
+				letter-spacing: -0.42px;
+				font-family: $fontHalvarBreit;
+				@include adaptiveValue("font-size", 74, 34, 2, $containerWidth, 767.98);
+			}
+		}
+		@media (max-width: toEm($mobile)) {
+			font-size: 17px;
+			line-height: 1.35;
+			letter-spacing: -0.32px;
+			span {
+				display: none;
+			}
+		}
+	}
+}
+.body-tabs-get {
+	// .body-tabs-get__inner
+	&__inner {
+		display: grid;
+		align-items: start;
+		@media (min-width: toEm($mobile)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: toEm($mobile)) {
+			gap: 35px;
+		}
+	}
+	// .body-tabs-get__about
+	&__about {
+		display: grid;
+		text-wrap: balance;
+		@include adaptiveValue("gap", 24, 14);
+	}
+	// .body-tabs-get__title
+	&__title {
+		@media (max-width: toEm($mobile)) {
+			max-width: 400px;
+		}
+	}
+	// .body-tabs-get__text
+	&__text {
+		max-width: 340px;
 	}
 }
 // Rates
@@ -138,7 +304,7 @@
 	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 	&:nth-child(2) {
 		color: #fff;
-		background-color: $primaryColor;
+		background: $primaryColor url("@img/rate-decore.svg") right bottom no-repeat;
 		.card-rates__head {
 			background-color: #759efa;
 			border: 1px solid rgba(231, 235, 243, 0.37);
@@ -254,5 +420,40 @@
 		@media (max-width: toEm($mobileSmall)) {
 			font-size: 13px;
 		}
+	}
+}
+// Faq
+.faq {
+	padding-block: 70px;
+	// .faq__container
+	&__container {
+		@media (max-width: toEm($mobile)) {
+			margin-inline: -15px;
+		}
+	}
+	// .faq__body
+	&__body {
+		border-radius: 35px;
+		padding-inline: 30px;
+		background-color: #fff;
+		box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+		@include adaptiveValue("padding-top", 78, 27);
+		@include adaptiveValue("padding-bottom", 158, 67);
+		@media (max-width: toEm($mobile)) {
+			border-radius: 0;
+			padding-inline: 15px;
+		}
+	}
+	// .faq__title
+	&__title {
+		text-align: center;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 26);
+		}
+	}
+	// .faq__spollers
+	&__spollers {
+		margin: 0 auto;
+		max-width: 1100px;
 	}
 }
