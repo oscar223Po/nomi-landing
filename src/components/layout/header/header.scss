@@ -26,7 +26,6 @@
 		@media (min-width: toEm($tablet)) {
 			display: grid;
 			grid-template-columns: 185px auto 185px;
-			box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 		}
 		@media (max-width: toEm($tablet)) {
 			display: flex;
@@ -38,6 +37,7 @@
 			padding-left: 15px;
 			padding-right: 6px;
 			background-color: #fff;
+			box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 		}
 	}
 	// .header__logo
