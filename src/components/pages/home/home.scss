@@ -14,6 +14,9 @@
 	// .page__whom
 	&__whom {
 	}
+	// .page__poster
+	&__poster {
+	}
 }
 // Whom
 .whom {
@@ -112,8 +115,11 @@
 	// .whom__img-decore
 	&__img-decore {
 		width: 100%;
-		bottom: -100px;
 		position: absolute;
+		@include adaptiveValue("bottom", -200, -70, 2, $containerWidth, 991.98);
+		&.layer-whom {
+			mix-blend-mode: darken;
+		}
 	}
 	// .whom__tabs
 	&__tabs {
@@ -205,7 +211,10 @@
 			color: #fff;
 			opacity: 0.24;
 			position: absolute;
-			@include adaptiveValue("font-size", 170, 100, 0, 991.98, 320);
+			@include adaptiveValue("font-size", 250, 170, 0, 991.98, 320);
+			@media (max-width: toEm($mobileSmall)) {
+				translate: 0 25%;
+			}
 		}
 		span {
 			top: 14px;
@@ -218,10 +227,15 @@
 			position: absolute;
 			letter-spacing: -0.32px;
 		}
-		img {
-			bottom: -20px;
-			position: absolute;
-			@include adaptiveValue("padding-inline", 120, 30, 0, 991.98, 320);
+	}
+	// .body-tabs-whom__img-decore
+	&__img-decore {
+		position: absolute;
+		pointer-events: none;
+		@include adaptiveValue("bottom", -50, -30, 0, 991.98, 320);
+		@include adaptiveValue("padding-inline", 120, 15, 0, 991.98, 320);
+		&.layer-whom {
+			mix-blend-mode: darken;
 		}
 	}
 	// .body-tabs-whom__about
@@ -510,9 +524,105 @@
 		max-width: 340px;
 	}
 }
+// Poster
+.poster {
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+	background: linear-gradient(179deg, #6b97fe 0%, #b0c8ff 100%);
+	@media (min-width: toEm($tablet)) {
+		border-radius: 35px;
+	}
+	// .poster__container
+	&__container {
+		position: relative;
+		padding-top: 117px;
+		padding-bottom: 117px;
+		&::after {
+			right: 0;
+			bottom: 0;
+			content: "";
+			position: absolute;
+			background: url("@img/poster/decore-02.svg") 0 0 / contain no-repeat;
+			@include adaptiveValue("width", 700, 300);
+			@include adaptiveValue("height", 591, 246);
+		}
+		@media (min-width: toEm($mobile)) {
+			&::before {
+				top: 0;
+				left: 0;
+				content: "";
+				width: 489px;
+				aspect-ratio: 1;
+				translate: -50% 0;
+				position: absolute;
+				background: url("@img/poster/decore-01.svg") 0 0 no-repeat;
+			}
+		}
+		@media (max-width: toEm($tablet)) {
+			padding-top: 40px;
+		}
+		@media (max-width: toEm($mobile)) {
+			@include adaptiveValue("padding-bottom", 460, 240, 0, 767.98, 320);
+			&::after {
+				left: 0;
+				margin: 0 auto;
+			}
+		}
+	}
+	// .poster__image-wrap
+	&__image {
+		right: 0;
+		z-index: 1;
+		position: absolute;
+		@include adaptiveValue("width", 966, 366, 2, $containerWidth, 767.98);
+		@include adaptiveValue("bottom", -140, -40, 2, $containerWidth, 767.98);
+		img {
+			width: 100%;
+		}
+		@media (max-width: toEm($mobile)) {
+			left: 0;
+			bottom: 0;
+			translate: 0 50%;
+			margin-inline: -150px;
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			margin-inline: -100px;
+		}
+	}
+}
+.about-poster {
+	position: relative;
+	@include adaptiveValue("max-width", 485, 385, 2, $containerWidth, 767.98);
+	> * {
+		margin-bottom: 40px;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	// .about-poster__title
+	&__title {
+		color: #fff;
+		line-height: 1.03;
+		margin-bottom: 20px;
+	}
+	// .about-poster__text
+	&__text {
+		&.--text {
+			color: #fff;
+			opacity: 0.91;
+		}
+		p {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
 // Rates
 .rates {
-	@include adaptiveValue("padding-top", 66, 40);
+	@include adaptiveValue("padding-top", 249, 70, 2, $containerWidth, 767.98);
+	@media (max-width: toEm($mobile)) {
+		@include adaptiveValue("padding-top", 489, 219, 0, 767.98, 320);
+	}
 	// .rates__title
 	&__title {
 		text-align: center;
