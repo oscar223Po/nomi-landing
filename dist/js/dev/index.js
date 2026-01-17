@@ -4658,6 +4658,29 @@ function Navigation({
 }
 let decideSlider = null;
 const decideBreakpoint = window.matchMedia("(max-width: 767.98px)");
+function initSliders() {
+  if (document.querySelector(".work__slider")) {
+    new Swiper(".work__slider", {
+      modules: [Navigation],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 2.5,
+      spaceBetween: 15,
+      speed: 800,
+      // Брейкпоинты
+      breakpoints: {
+        320: {
+          slidesPerView: 1.2,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 2.3,
+          spaceBetween: 15
+        }
+      }
+    });
+  }
+}
 function initDecideSlider() {
   if (!decideSlider && document.querySelector(".decide__slider")) {
     decideSlider = new Swiper(".decide__slider", {
@@ -4741,6 +4764,7 @@ function decideBreakpointChecker() {
   }
 }
 document.querySelector("[data-fls-slider]") ? window.addEventListener("load", () => {
+  initSliders();
   decideBreakpointChecker();
   decideBreakpoint.addEventListener("change", decideBreakpointChecker);
 }) : null;

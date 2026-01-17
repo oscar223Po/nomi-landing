@@ -39,13 +39,27 @@ const decideBreakpoint = window.matchMedia('(max-width: 767.98px)')
 // =====================================================
 function initSliders() {
 	// Пример: другие слайдеры работают всегда
-	// if (document.querySelector('.hero__slider')) {
-	// 	new Swiper('.hero__slider', {
-	// 		modules: [Navigation],
-	// 		slidesPerView: 1,
-	// 		speed: 600
-	// 	})
-	// }
+	if (document.querySelector('.work__slider')) {
+		new Swiper('.work__slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 2.5,
+			spaceBetween: 15,
+			speed: 800,
+			// Брейкпоинты
+			breakpoints: {
+				320: {
+					slidesPerView: 1.2,
+					spaceBetween: 10
+				},
+				768: {
+					slidesPerView: 2.3,
+					spaceBetween: 15
+				}
+			}
+		})
+	}
 }
 
 // =====================================================
@@ -155,5 +169,5 @@ document.querySelector('[data-fls-slider]')
 			// 2. Отдельная логика ТОЛЬКО для decide-слайдера
 			decideBreakpointChecker()
 			decideBreakpoint.addEventListener('change', decideBreakpointChecker)
-	  })
+		})
 	: null
