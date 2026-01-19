@@ -97,11 +97,37 @@
 	min-width: 610px;
 	position: relative;
 	@include adaptiveValue("margin-right", 0, -150, 2, $containerWidth, 991.98);
+	&::before {
+		top: 20px;
+		right: 20px;
+		content: "";
+		z-index: -1;
+		width: 490px;
+		aspect-ratio: 1;
+		position: absolute;
+		background: url("@img/hero/decore.svg") 0 0 / contain no-repeat;
+	}
+	&::after {
+		top: 150px;
+		z-index: -1;
+		left: -100px;
+		color: #fff;
+		font-size: 400px;
+		content: "\f105";
+		position: absolute;
+		font-family: "iconfont";
+	}
 	@media (max-width: toEm($tablet)) {
 		align-self: center;
 	}
 	@media (max-width: toEm($mobileSmall)) {
 		min-width: 460px;
+		&::before {
+			width: 280px;
+		}
+		&::after {
+			display: none;
+		}
 	}
 	// .mockup__rack
 	&__rack {

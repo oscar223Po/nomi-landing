@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<style data-fls-preloader="">
+			body > *:not(.fls-preloader) {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	[data-fls-preloader-loaded] body > *:not(.fls-preloader) {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.5s ease;
+	}
+		</style>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="preload" href="./assets/fonts/HalvarBreit-Rg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -8,8 +20,8 @@
 		<link rel="preload" href="./assets/fonts/HalvarBreit-Bd.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/shortcut.svg">
 		<title>Nomi (Landing)</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1768815888126"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1768815888126">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1768844535908"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1768844535908">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -17,7 +29,7 @@
 				<div class="header__container">
 					<div class="header__body">
 						<div class="header__logo">
-							<a href="#" class="--icon-logo">Nomi</a>
+							<a href="#" data-fls-scrollto=".hero" class="--icon-logo">Nomi</a>
 						</div>
 						<div class="header__menu menu">
 							<div data-fls-menu="" class="menu__overlay"></div>
@@ -29,27 +41,27 @@
 									</div>
 									<ul class="menu__list">
 										<li class="menu__item">
-											<a href="#" class="menu__link">
+											<a href="#" data-fls-scrollto=".hero" class="menu__link">
 												<span>Главная</span>
 											</a>
 										</li>
 										<li class="menu__item">
-											<a href="#" class="menu__link">
+											<a href="#" data-fls-scrollto=".decide" class="menu__link">
 												<span>Возможности</span>
 											</a>
 										</li>
 										<li class="menu__item">
-											<a href="#" class="menu__link">
+											<a href="#" data-fls-scrollto=".rates" class="menu__link">
 												<span>Тарифы</span>
 											</a>
 										</li>
 										<li class="menu__item">
-											<a href="#" class="menu__link">
+											<a href="#" data-fls-scrollto=".faq" class="menu__link">
 												<span>FAQ</span>
 											</a>
 										</li>
 										<li class="menu__item">
-											<a href="#" class="menu__link">
+											<a href="#" data-fls-scrollto="undefined" class="menu__link">
 												<span>Контакты</span>
 											</a>
 										</li>
@@ -90,13 +102,13 @@
 								</p>
 							</div>
 							<a data-fls-button="" href="#" class="about-hero__button button --icon-telegram button--lg">Начать бесплатно</a>
-							<img class="about-hero__image" src="./assets/img/hero/steps.png" alt="Image">
+							<img data-fls-watcher="" class="about-hero__image lazyload" src="./assets/img/hero/steps.svg" alt="Image">
 						</div>
 						<div class="hero__mockup mockup">
 							<div class="mockup__stand">
 								<div class="mockup__phone phone-mockup">
 									<img class="phone-mockup__iphone" src="./assets/img/hero/phone.png" alt="Image">
-									<img class="phone-mockup__decore" src="./assets/img/hero/decore.svg" alt="Image">
+									<img class="phone-mockup__decore" src="./assets/img/hero/die.svg" alt="Image">
 									<div class="phone-mockup__wrapper">
 										<div class="phone-mockup__head">
 											<span>Все</span>
@@ -167,8 +179,8 @@
 									</div>
 									<div class="whom__decore --icon-logo">
 										<span>01</span>
-										<img class="whom__img-decore layer-whom" src="./assets/img/whom/01-layer.png" alt="Image">
-										<img class="whom__img-decore" src="./assets/img/whom/01.png" alt="Image">
+										<img data-fls-watcher="" class="whom__img-decore layer-whom lazyload" src="./assets/img/whom/01-layer.png" alt="Image">
+										<img data-fls-watcher="" class="whom__img-decore lazyload" src="./assets/img/whom/01.png" alt="Image">
 									</div>
 								</div>
 								<div class="whom__section">
@@ -184,8 +196,8 @@
 									</div>
 									<div class="whom__decore --icon-logo">
 										<span>02</span>
-										<img class="whom__img-decore layer-whom" src="./assets/img/whom/02-layer.png" alt="Image">
-										<img class="whom__img-decore" src="./assets/img/whom/02.png" alt="Image">
+										<img data-fls-watcher="" class="whom__img-decore layer-whom lazyload" src="./assets/img/whom/02-layer.png" alt="Image">
+										<img data-fls-watcher="" class="whom__img-decore lazyload" src="./assets/img/whom/02.png" alt="Image">
 									</div>
 								</div>
 								<div class="whom__section">
@@ -201,8 +213,8 @@
 									</div>
 									<div class="whom__decore --icon-logo">
 										<span>03</span>
-										<img class="whom__img-decore layer-whom" src="./assets/img/whom/03-layer.png" alt="Image">
-										<img class="whom__img-decore" src="./assets/img/whom/03.png" alt="Image">
+										<img data-fls-watcher="" class="whom__img-decore layer-whom lazyload" src="./assets/img/whom/03-layer.png" alt="Image">
+										<img data-fls-watcher="" class="whom__img-decore lazyload" src="./assets/img/whom/03.png" alt="Image">
 									</div>
 								</div>
 							</div>
@@ -217,7 +229,7 @@
 										<div class="body-tabs-whom__inner">
 											<div class="body-tabs-whom__decore --icon-logo">
 												<span>01</span>
-												<img class="body-tabs-whom__img-decore layer-whom" src="./assets/img/whom/01-layer.png" alt="Image">
+												<img data-fls-watcher="" class="body-tabs-whom__img-decore layer-whom lazyload" src="./assets/img/whom/01-layer.png" alt="Image">
 												<img class="body-tabs-whom__img-decore" src="./assets/img/whom/01.png" alt="Image">
 											</div>
 											<div class="body-tabs-whom__about">
@@ -236,7 +248,7 @@
 										<div class="body-tabs-whom__inner">
 											<div class="body-tabs-whom__decore --icon-logo">
 												<span>02</span>
-												<img class="body-tabs-whom__img-decore layer-whom" src="./assets/img/whom/02-layer.png" alt="Image">
+												<img data-fls-watcher="" class="body-tabs-whom__img-decore layer-whom lazyload" src="./assets/img/whom/02-layer.png" alt="Image">
 												<img class="body-tabs-whom__img-decore" src="./assets/img/whom/02.png" alt="Image">
 											</div>
 											<div class="body-tabs-whom__about">
@@ -255,7 +267,7 @@
 										<div class="body-tabs-whom__inner">
 											<div class="body-tabs-whom__decore --icon-logo">
 												<span>03</span>
-												<img class="body-tabs-whom__img-decore layer-whom" src="./assets/img/whom/03-layer.png" alt="Image">
+												<img data-fls-watcher="" class="body-tabs-whom__img-decore layer-whom lazyload" src="./assets/img/whom/03-layer.png" alt="Image">
 												<img class="body-tabs-whom__img-decore" src="./assets/img/whom/03.png" alt="Image">
 											</div>
 											<div class="body-tabs-whom__about">
@@ -281,7 +293,7 @@
 						<div data-fls-slider="" class="decide__slider swiper">
 							<div class="decide__wrapper swiper-wrapper">
 								<article class="decide__item item-decide swiper-slide">
-									<img src="./assets/img/decide/01.png" alt="Image">
+									<img data-fls-watcher="" src="./assets/img/decide/01.png" alt="Image" class="lazyload">
 									<div class="item-decide__content">
 										<h3 class="item-decide__title">Сложно и дорого запустить своё приложение или сайт</h3>
 										<div class="item-decide__text --text">
@@ -293,7 +305,7 @@
 									</div>
 								</article>
 								<article class="decide__item item-decide swiper-slide">
-									<img src="./assets/img/decide/02.png" alt="Image">
+									<img data-fls-watcher="" src="./assets/img/decide/02.png" alt="Image" class="lazyload">
 									<div class="item-decide__content">
 										<h3 class="item-decide__title">Отсутствие прямого контакта с гостем</h3>
 										<div class="item-decide__text --text">
@@ -305,7 +317,7 @@
 									</div>
 								</article>
 								<article class="decide__item item-decide swiper-slide">
-									<img src="./assets/img/decide/03.png" alt="Image">
+									<img data-fls-watcher="" src="./assets/img/decide/03.png" alt="Image" class="lazyload">
 									<div class="item-decide__content">
 										<h3 class="item-decide__title">Нет своего канала коммуникации с клиентами</h3>
 										<div class="item-decide__text --text">
@@ -317,7 +329,7 @@
 									</div>
 								</article>
 								<article class="decide__item item-decide swiper-slide">
-									<img src="./assets/img/decide/04.png" alt="Image">
+									<img data-fls-watcher="" src="./assets/img/decide/04.png" alt="Image" class="lazyload">
 									<div class="item-decide__content">
 										<h3 class="item-decide__title">Невозможно быстро обновлять меню и акции</h3>
 										<div class="item-decide__text --text">
@@ -329,7 +341,7 @@
 									</div>
 								</article>
 								<article class="decide__item item-decide swiper-slide">
-									<img src="./assets/img/decide/05.png" alt="Image">
+									<img data-fls-watcher="" src="./assets/img/decide/05.png" alt="Image" class="lazyload">
 									<div class="item-decide__content">
 										<h3 class="item-decide__title">Мало повторных визитов</h3>
 										<div class="item-decide__text --text">
@@ -341,7 +353,7 @@
 									</div>
 								</article>
 								<article class="decide__item item-decide swiper-slide">
-									<img src="./assets/img/decide/06.png" alt="Image">
+									<img data-fls-watcher="" src="./assets/img/decide/06.png" alt="Image" class="lazyload">
 									<div class="item-decide__content">
 										<h3 class="item-decide__title">Гости ждут официанта и не любят звонить</h3>
 										<div class="item-decide__text --text">
@@ -469,7 +481,7 @@
 									<div class="work__slide slide-work swiper-slide">
 										<div class="slide-work__head --icon-logo">
 											<span>01</span>
-											<img src="./assets/img/work/01.png" alt="Image">
+											<img data-fls-watcher="" class="lazyload" src="./assets/img/work/01.png" alt="Image">
 										</div>
 										<div class="slide-work__content">
 											<h3 class="slide-work__title">Вход напрямую через Telegram</h3>
@@ -484,7 +496,7 @@
 									<div class="work__slide slide-work swiper-slide">
 										<div class="slide-work__head --icon-logo">
 											<span>02</span>
-											<img src="./assets/img/work/02.png" alt="Image">
+											<img data-fls-watcher="" class="lazyload" src="./assets/img/work/02.png" alt="Image">
 										</div>
 										<div class="slide-work__content">
 											<h3 class="slide-work__title">Выбор формата заказа</h3>
@@ -500,7 +512,7 @@
 									<div class="work__slide slide-work swiper-slide">
 										<div class="slide-work__head --icon-logo">
 											<span>03</span>
-											<img src="./assets/img/work/03.png" alt="Image">
+											<img data-fls-watcher="" class="lazyload" src="./assets/img/work/03.png" alt="Image">
 										</div>
 										<div class="slide-work__content">
 											<h3 class="slide-work__title">Выбор блюд</h3>
@@ -515,7 +527,7 @@
 									<div class="work__slide slide-work swiper-slide">
 										<div class="slide-work__head --icon-logo">
 											<span>04</span>
-											<img src="./assets/img/work/04.png" alt="Image">
+											<img data-fls-watcher="" class="lazyload" src="./assets/img/work/04.png" alt="Image">
 										</div>
 										<div class="slide-work__content">
 											<h3 class="slide-work__title">Оплата</h3>
@@ -531,7 +543,7 @@
 									<div class="work__slide slide-work swiper-slide">
 										<div class="slide-work__head --icon-logo">
 											<span>05</span>
-											<img src="./assets/img/work/05.png" alt="Image">
+											<img data-fls-watcher="" class="lazyload" src="./assets/img/work/05.png" alt="Image">
 										</div>
 										<div class="slide-work__content">
 											<h3 class="slide-work__title">Уведомление</h3>
@@ -546,7 +558,7 @@
 									<div class="work__slide slide-work swiper-slide">
 										<div class="slide-work__head --icon-logo">
 											<span>06</span>
-											<img src="./assets/img/work/06.png" alt="Image">
+											<img data-fls-watcher="" class="lazyload" src="./assets/img/work/06.png" alt="Image">
 										</div>
 										<div class="slide-work__content">
 											<h3 class="slide-work__title">Отслеживание</h3>
@@ -622,7 +634,7 @@
 												</p>
 											</div>
 										</div>
-										<img src="./assets/img/get/01.png" alt="Image">
+										<img data-fls-watcher="" class="lazyload" src="./assets/img/get/01.png" alt="Image">
 									</div>
 								</div>
 								<div class="tabs-get__body body-tabs-get">
@@ -636,7 +648,7 @@
 												</p>
 											</div>
 										</div>
-										<img src="./assets/img/get/02.png" alt="Image">
+										<img data-fls-watcher="" class="lazyload" src="./assets/img/get/02.png" alt="Image">
 									</div>
 								</div>
 								<div class="tabs-get__body body-tabs-get">
@@ -648,7 +660,7 @@
 										предложения</p>
 											</div>
 										</div>
-										<img src="./assets/img/get/03.png" alt="Image">
+										<img data-fls-watcher="" class="lazyload" src="./assets/img/get/03.png" alt="Image">
 									</div>
 								</div>
 								<div class="tabs-get__body body-tabs-get">
@@ -662,7 +674,7 @@
 												</p>
 											</div>
 										</div>
-										<img src="./assets/img/get/04.png" alt="Image">
+										<img data-fls-watcher="" class="lazyload" src="./assets/img/get/04.png" alt="Image">
 									</div>
 								</div>
 								<div class="tabs-get__body body-tabs-get">
@@ -676,7 +688,7 @@
 												</p>
 											</div>
 										</div>
-										<img src="./assets/img/get/05.png" alt="Image">
+										<img data-fls-watcher="" class="lazyload" src="./assets/img/get/05.png" alt="Image">
 									</div>
 								</div>
 								<div class="tabs-get__body body-tabs-get">
@@ -688,7 +700,7 @@
 										требованиям</p>
 											</div>
 										</div>
-										<img src="./assets/img/get/06.png" alt="Image">
+										<img data-fls-watcher="" class="lazyload" src="./assets/img/get/06.png" alt="Image">
 									</div>
 								</div>
 							</div>
@@ -714,7 +726,7 @@
 							<a data-fls-button="" href="#" class="about-poster__button button --icon-telegram button--white button--lg">Открыть демо в Telegram</a>
 						</div>
 						<div class="poster__image">
-							<img src="./assets/img/poster/image.png" alt="Image">
+							<img data-fls-watcher="" class="lazyload" src="./assets/img/poster/image.png" alt="Image">
 						</div>
 					</div>
 				</section>
@@ -904,17 +916,17 @@
 							<h3 class="main-footer__title --subtitle">Заказы без приложений</h3>
 							<a data-fls-button="" href="#" class="main-footer__button --icon-telegram button button--white button--lg">Открыть демо в Telegram</a>
 						</div>
-						<img class="main-footer__image" src="./assets/img/footer.png" alt="Footer">
+						<img data-fls-watcher="" class="main-footer__image lazyload" src="./assets/img/footer.png" alt="Footer">
 					</div>
-					<a href="#" class="footer__link link-footer --icon-link link-footer--01">
+					<a href="#" data-fls-scrollto=".decide" class="footer__link link-footer --icon-link link-footer--01">
 						<span>Возможности и преимущества</span>
 						<h3 class="link-footer__title --subtitle">возможности</h3>
 					</a>
-					<a href="#" class="footer__link link-footer --icon-link link-footer--02">
+					<a href="#" data-fls-scrollto=".faq" class="footer__link link-footer --icon-link link-footer--02">
 						<span>Самые часто задаваемые вопросы</span>
 						<h3 class="link-footer__title --subtitle">FAQ</h3>
 					</a>
-					<a href="#" class="footer__link link-footer --icon-link link-footer--03">
+					<a href="#" data-fls-scrollto=".rates" class="footer__link link-footer --icon-link link-footer--03">
 						<span>Выберите тариф и начните работу</span>
 						<h3 class="link-footer__title --subtitle">Тарифы</h3>
 					</a>

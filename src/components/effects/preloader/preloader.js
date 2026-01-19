@@ -1,62 +1,53 @@
 import './preloader.scss'
 
-function preloader() {
-	const preloaderImages = document.querySelectorAll('img')
-	const htmlDocument = document.documentElement
-	const isPreloaded = localStorage.getItem(location.href) && document.querySelector('[data-fls-preloader="true"]')
-	if (preloaderImages.length && !isPreloaded) {
-		const preloaderTemplate = `
-			<div class="fls-preloader">
-				<div class="fls-preloader__body">
-					<div class="fls-preloader__counter">0%</div>
-					<div class="fls-preloader__line"><span></span></div>
-				</div>
-			</div>`
-		document.body.insertAdjacentHTML("beforeend", preloaderTemplate);
-		const
-			preloader = document.querySelector('.fls-preloader'),
-			showPecentLoad = document.querySelector('.fls-preloader__counter'),
-			showLineLoad = document.querySelector('.fls-preloader__line span')
+(function preloader() {
+	const html = document.documentElement
 
-		let imagesLoadedCount = 0
-		let counter = 0
-		let progress = 0
+	// Включаем сразу
+	html.setAttribute('data-fls-preloader-loading', '')
+	html.setAttribute('data-fls-scrolllock', '')
 
-		htmlDocument.setAttribute('data-fls-preloader-loading', '')
-		htmlDocument.setAttribute('data-fls-scrolllock', '')
+	const template = `
+		<div class="fls-preloader">
+			<div class="fls-preloader__body">
+				<div class="fls-preloader__counter">0%</div>
+				<div class="fls-preloader__line"><span></span></div>
+			</div>
+		</div>
+	`
 
-		preloaderImages.forEach(preloaderImage => {
-			const imgClone = document.createElement('img');
-			if (imgClone) {
-				imgClone.onload = imageLoaded;
-				imgClone.onerror = imageLoaded;
-				preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
-			}
-		})
-		function setValueProgress(progress) {
-			showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
-			showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
-		}
-		setValueProgress(progress)
+	document.body.insertAdjacentHTML('beforeend', template)
 
-		function imageLoaded() {
-			imagesLoadedCount++;
-			progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount)
-			const intervalId = setInterval(() => {
-				counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
-				counter >= 100 ? addLoadedClass() : null;
-			}, 10)
-		}
-		const preloaderOnce = () => localStorage.setItem(location.href, 'preloaded')
+	const counterEl = document.querySelector('.fls-preloader__counter')
+	const lineEl = document.querySelector('.fls-preloader__line span')
 
-		document.querySelector('[data-fls-preloader="true"]') ? preloaderOnce() : null
-	} else {
-		addLoadedClass()
+	let progress = 0
+	let fakeTimer = null
+
+	function setProgress(value) {
+		counterEl.textContent = `${value}%`
+		lineEl.style.width = `${value}%`
 	}
-	function addLoadedClass() {
-		htmlDocument.setAttribute('data-fls-preloader-loaded', '')
-		htmlDocument.removeAttribute('data-fls-preloader-loading')
-		htmlDocument.removeAttribute('data-fls-scrolllock')
-	}
-}
-document.addEventListener('DOMContentLoaded', preloader)
+
+	// Фейковая анимация до 90%
+	fakeTimer = setInterval(() => {
+		if (progress < 90) {
+			progress++
+			setProgress(progress)
+		}
+	}, 20)
+
+	// ЖДЁМ РЕАЛЬНУЮ ЗАГРУЗКУ СТРАНИЦЫ
+	window.addEventListener('load', () => {
+		clearInterval(fakeTimer)
+		progress = 100
+		setProgress(progress)
+
+		// Небольшая пауза, чтобы 100% было видно
+		setTimeout(() => {
+			html.setAttribute('data-fls-preloader-loaded', '')
+			html.removeAttribute('data-fls-preloader-loading')
+			html.removeAttribute('data-fls-scrolllock')
+		}, 300)
+	})
+})()

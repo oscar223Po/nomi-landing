@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");* {
+@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");@import url("https://fonts.googleapis.com/css2?family=Inter%20Tight:wght@400;500;600&display=swap");@import url("https://fonts.googleapis.com/css2?family=Beiruti:wght@800&display=swap");@import url("https://fonts.googleapis.com/css2?family=Geostar%20Fill:wght@400&display=swap");* {
 	padding: 0rem;
 	margin: 0rem;
 	border: 0rem;
@@ -71,41 +71,43 @@ h6 {
 @font-face {font-family: HalvarBreit;font-display: swap;src: url("../assets/fonts/HalvarBreit-Rg.woff2") format("woff2");font-weight: 400;font-style: normal;}
 @font-face {font-family: HalvarBreit;font-display: swap;src: url("../assets/fonts/HalvarBreit-Md.woff2") format("woff2");font-weight: 400;font-style: normal;}
 @font-face {font-family: HalvarBreit;font-display: swap;src: url("../assets/fonts/HalvarBreit-Bd.woff2") format("woff2");font-weight: 400;font-style: normal;}
-@font-face { 
-	font-family: "iconfont"; 
+@font-face {
+	font-family: 'iconfont';
 	font-display: swap;
-	src: url("../assets/fonts/iconfont.woff2?7a29cf19d4af8aae0a582a816760eaea") format("woff2"); 
-} 
-[class*="--icon-"]::before{
-	font-family: iconfont; 
+	src: url('../assets/fonts/iconfont.woff2?7a29cf19d4af8aae0a582a816760eaea')
+		format('woff2');
 }
-	[class*="--icon-tg"]::before { 
-		content: "\f101"; 
-	} 
-	[class*="--icon-telegram"]::before { 
-		content: "\f102"; 
-	} 
-	[class*="--icon-plus"]::before { 
-		content: "\f103"; 
-	} 
-	[class*="--icon-minus"]::before { 
-		content: "\f104"; 
-	} 
-	[class*="--icon-logo"]::before { 
-		content: "\f105"; 
-	} 
-	[class*="--icon-link"]::before { 
-		content: "\f106"; 
-	} 
-	[class*="--icon-check"]::before { 
-		content: "\f107"; 
-	} 
-	[class*="--icon-cancel"]::before { 
-		content: "\f108"; 
-	} 
-	[class*="--icon-arrow"]::before { 
-		content: "\f109"; 
-	} 
+[class*='--icon-']::before {
+	font-family: iconfont;
+}
+[class*='--icon-tg']::before {
+	content: '\f101';
+}
+[class*='--icon-telegram']::before {
+	content: '\f102';
+}
+[class*='--icon-plus']::before {
+	content: '\f103';
+}
+[class*='--icon-minus']::before {
+	content: '\f104';
+}
+[class*='--icon-logo']::before {
+	content: '\f105';
+}
+[class*='--icon-link']::before {
+	content: '\f106';
+}
+[class*='--icon-check']::before {
+	content: '\f107';
+}
+[class*='--icon-cancel']::before {
+	content: '\f108';
+}
+[class*='--icon-arrow']::before {
+	content: '\f109';
+}
+
 
 
 /* Generated by vite-plugin-svg-spritemap */
@@ -162,6 +164,16 @@ body {
   letter-spacing: -0.02rem;
   color: rgba(51, 51, 51, 0.73);
 }
+[class*=lazyload] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 0.5s, visibility 0.3s ease 0.5s;
+}
+[class*=lazyload].--watcher-view {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /* Generated by vite-plugin-svg-spritemap */
 .tabs__navigation {
@@ -179,6 +191,7 @@ body {
   border: 0.0625rem solid #eee;
   padding: 0.625rem 0.9375rem;
 }
+
 
 /* Generated by vite-plugin-svg-spritemap */
 .spollers {
@@ -257,6 +270,7 @@ body {
   padding-left: 0.9375rem;
 }
 
+
 /* Generated by vite-plugin-svg-spritemap */
 .swiper {
   overflow: hidden;
@@ -287,6 +301,7 @@ body {
 .swiper-button-lock {
   display: none !important;
 }
+
 
 /* Generated by vite-plugin-svg-spritemap */
 .menu__overlay {
@@ -377,6 +392,7 @@ body {
   transform: rotate(45deg);
 }
 
+
 /* Generated by vite-plugin-svg-spritemap */
 .header {
   top: 0;
@@ -428,7 +444,9 @@ body {
   background-color: #6f9afa;
 }
 
+
 /* Generated by vite-plugin-svg-spritemap */
+
 
 /* Generated by vite-plugin-svg-spritemap */
 .footer__container {
@@ -507,6 +525,7 @@ body {
   word-break: break-all;
 }
 
+
 /* Generated by vite-plugin-svg-spritemap */
 .button {
   gap: 0.625rem;
@@ -553,7 +572,53 @@ body {
   padding-inline: 0;
 }
 
+
 /* Generated by vite-plugin-svg-spritemap */
+.fls-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.fls-preloader__body {
+  padding: 1rem;
+  max-width: 31.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.fls-preloader__counter {
+  line-height: 1;
+  font-size: 10rem;
+  font-family: "HalvarBreit", sans-serif;
+}
+.fls-preloader__line {
+  margin-top: 1rem;
+  width: 100%;
+  height: 0.8rem;
+  border-radius: 0.625rem;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.fls-preloader__line span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: #6f9afa;
+  transition: width 0.2s ease;
+}
+[data-fls-preloader-loaded] .fls-preloader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* Generated by vite-plugin-svg-spritemap */
+
 
 /* Generated by vite-plugin-svg-spritemap */
 .hero ::-webkit-scrollbar {
@@ -595,6 +660,26 @@ body {
 .mockup {
   min-width: 38.125rem;
   position: relative;
+}
+.mockup::before {
+  top: 1.25rem;
+  right: 1.25rem;
+  content: "";
+  z-index: -1;
+  width: 30.625rem;
+  aspect-ratio: 1;
+  position: absolute;
+  background: url("../assets/img/hero/decore.svg") 0 0/contain no-repeat;
+}
+.mockup::after {
+  top: 9.375rem;
+  z-index: -1;
+  left: -6.25rem;
+  color: #fff;
+  font-size: 25rem;
+  content: "\f105";
+  position: absolute;
+  font-family: "iconfont";
 }
 .mockup__rack {
   padding-top: 1.25rem;
@@ -1494,6 +1579,12 @@ body {
   }
   .mockup {
     min-width: 28.75rem;
+  }
+  .mockup::before {
+    width: 17.5rem;
+  }
+  .mockup::after {
+    display: none;
   }
   .phone-mockup {
     width: 14.3125rem;

@@ -1,39 +1,48 @@
-/* Головний блок */
 .fls-preloader {
-	pointer-events: none;
-	z-index: -1;
 	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
+	inset: 0;
+	z-index: 9999;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: all 0.8s 0.3s;
+	background-color: #fff;
+	transition:
+		opacity 0.8s ease,
+		visibility 0.8s ease;
 }
-/* Блок з елементами */
+
 .fls-preloader__body {
-	padding: 0.93rem;
+	padding: 1rem;
 	max-width: 31.25rem;
 	display: flex;
 	flex-direction: column;
 }
-/* Блок з лічильником */
+
 .fls-preloader__counter {
+	line-height: 1;
 	font-size: 10rem;
+	font-family: $fontHalvarBreit;
 }
-/* Прогресбар */
+
 .fls-preloader__line {
-}
-/* Лінія прогресбару */
-.fls-preloader__line span {
-	display: inline-block;
-	transition: width 0.2s ease;
+	margin-top: 1rem;
+	width: 100%;
 	height: 0.8rem;
-	background-color: #7a956b;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.2);
+	overflow: hidden;
 }
+
+.fls-preloader__line span {
+	display: block;
+	height: 100%;
+	width: 0%;
+	background-color: $primaryColor;
+	transition: width 0.2s ease;
+}
+
 [data-fls-preloader-loaded] .fls-preloader {
 	opacity: 0;
 	visibility: hidden;
+	pointer-events: none;
 }

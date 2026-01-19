@@ -1,7 +1,7 @@
-import { FLS, slideUp, slideDown, slideToggle, dataMediaQueries, getHash, setHash } from "@js/common/functions.js";
+import { dataMediaQueries, FLS, getHash, setHash, slideDown, slideUp } from "@js/common/functions.js"
 
 // Підключення базових стилів
-import "./tabs.scss";
+import "./tabs.scss"
 
 export function tabs() {
 	const tabs = document.querySelectorAll('[data-fls-tabs]');
