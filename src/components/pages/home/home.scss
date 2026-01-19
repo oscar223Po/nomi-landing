@@ -26,12 +26,218 @@
 }
 // Hero
 .hero {
-	height: 100vh;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	padding-block: 170px;
+	// .hero__container
+	&__container {
+		display: flex;
+		align-items: center;
+	}
+}
+.about-hero {
 	display: flex;
-	font-size: 30px;
-	font-weight: 700;
-	align-items: center;
-	justify-content: center;
+	max-width: 795px;
+	align-items: start;
+	flex-direction: column;
+	> * {
+		margin-bottom: 38px;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	// .about-hero__title
+	&__title {
+		margin-bottom: 15px;
+	}
+	// .about-hero__text
+	&__text {
+		max-width: 410px;
+	}
+}
+.mockup {
+	position: relative;
+	// .mockup__rack
+	&__rack {
+		padding-top: 20px;
+		margin-right: -200px;
+	}
+}
+.phone-mockup {
+	width: 279px;
+	display: flex;
+	margin-left: 85px;
+	position: relative;
+	flex-direction: column;
+	&::before,
+	&::after {
+		top: 78px;
+		content: "";
+		height: 14px;
+		position: absolute;
+		width: calc(50% - 50px);
+		background-color: #fff;
+	}
+	&::before {
+		left: 11px;
+		border-radius: 35px 0 0 0;
+	}
+	&::after {
+		right: 11px;
+		border-radius: 0 35px 0 0;
+	}
+	// .phone-mockup__decore
+	&__decore {
+		left: 0;
+		right: 0;
+		top: 78px;
+		margin: 0 auto;
+		position: absolute;
+	}
+	// .phone-mockup__wrapper
+	&__wrapper {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		position: absolute;
+		margin: 0 11px 7px 11px;
+		background-color: #fff;
+		padding: 0 14px 14px 14px;
+		height: calc(100% - 99px);
+		border-radius: 0 0 40px 40px;
+	}
+	// .phone-mockup__head
+	&__head {
+		top: 0;
+		gap: 18px;
+		z-index: 1;
+		display: flex;
+		position: sticky;
+		white-space: nowrap;
+		margin-inline: -14px;
+		padding-inline: 14px;
+		background-color: #fff;
+		span {
+			line-height: 1.35;
+			padding-block: 11px;
+			letter-spacing: -0.32px;
+			background-color: #fff;
+			color: rgba($mainColor, 0.39);
+			&:first-child {
+				font-weight: 500;
+				color: rgba($mainColor, 1);
+			}
+		}
+	}
+	// .phone-mockup__content
+	&__content {
+		span {
+			font-weight: 500;
+			line-height: 1.35;
+			letter-spacing: -0.42px;
+		}
+	}
+	// .phone-mockup__block
+	&__block {
+		span {
+			display: block;
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+		&:first-child {
+			.phone-mockup__items {
+				img {
+					&:first-child {
+						transform: scale(1.1) translate(5px, -6px); // Показываем новое
+					}
+					&:last-child {
+						transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1); // Длительность синхронна с основной анимацией
+						transform-origin: center center;
+						transform: scale(0.85); // Целевой размер
+					}
+				}
+			}
+		}
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+	// .phone-mockup__items
+	&__items {
+		gap: 10px;
+		display: grid;
+		margin-right: -43px;
+		grid-template-columns: repeat(2, 1fr);
+		img {
+			width: 100%;
+			transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+			&.is-scaled-neighbor {
+				transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1); // Длительность синхронна с основной анимацией
+				transform-origin: center center;
+				transform: scale(0.85); // Целевой размер
+			}
+		}
+	}
+	// .phone-mockup__change-items
+	&__change-items {
+		position: relative;
+		display: block; // Важно для позиционирования
+		img {
+			transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); // Плавная анимация
+			transform-origin: center center;
+			width: 100%;
+			display: block;
+
+			// Первое изображение (исходное) - ведет себя как обычный блок
+			&:first-child {
+				position: relative;
+				transform: scale(1);
+			}
+
+			// Второе изображение (активное) - лежит поверх первого
+			&:last-child {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block; // Перебиваем display: none из старого кода
+				transform: scale(0); // Скрыто по умолчанию
+			}
+		}
+
+		// Класс состояния, который мы будем добавлять через JS
+		&.is-active {
+			img:first-child {
+				transform: scale(0); // Скрываем старое
+			}
+			img:last-child {
+				transform: scale(1.1) translate(5px, -6px); // Показываем новое
+			}
+		}
+	}
+}
+.table-mockup {
+	right: -160px;
+	bottom: -180px;
+	position: absolute;
+	// .table-mockup__img-change
+	&__img-change {
+		scale: 0;
+		top: -67px;
+		opacity: 0;
+		right: 150px;
+		position: absolute;
+		transition:
+			scale 0.5s ease,
+			opacity 0.5s ease;
+		&.change-active {
+			scale: 1;
+			opacity: 1;
+		}
+	}
 }
 // Whom
 .whom {

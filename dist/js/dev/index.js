@@ -11083,3 +11083,94 @@ const initWhomAnimations = () => {
 window.addEventListener("load", () => {
   initWhomAnimations();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const config3 = {
+    startDelay: 2e3,
+    // 2 сек пауза перед стартом (и при повторе)
+    scrollSpeed: 800,
+    // Увеличили длительность для плавности (было 1000)
+    animSpeed: 1500,
+    // Увеличили длительность трансформации (было 500)
+    pauseEnd: 2e3,
+    // Пауза в конце перед сбросом
+    scrollOffset: 50
+    // Не доходя 50px до элемента
+  };
+  const wrapper = document.querySelector(".phone-mockup__wrapper");
+  const itemGroup1 = document.querySelector(".change-items-one");
+  const itemGroup2 = document.querySelector(".change-items-two");
+  const neighborImg1 = itemGroup1.nextElementSibling;
+  const neighborImg2 = itemGroup2.nextElementSibling;
+  const tableImages = document.querySelectorAll(".table-mockup__img-change");
+  const allSpans = Array.from(
+    wrapper.querySelectorAll(".phone-mockup__block > span")
+  );
+  const dessertsLabel = allSpans.find(
+    (span) => span.textContent.trim() === "Дессерты"
+  );
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const setTableActive = (index) => {
+    tableImages.forEach((img, i) => {
+      if (i === index) img.classList.add("change-active");
+      else img.classList.remove("change-active");
+    });
+  };
+  const smoothScrollTo = (target, duration) => {
+    const start = wrapper.scrollTop;
+    const change = target - start;
+    const startTime = performance.now();
+    return new Promise((resolve) => {
+      const animateScroll = (currentTime) => {
+        const timeElapsed = currentTime - startTime;
+        if (timeElapsed < duration) {
+          let val = timeElapsed / (duration / 2);
+          let move = 0;
+          if (val < 1) {
+            move = change / 2 * val * val + start;
+          } else {
+            val--;
+            move = -change / 2 * (val * (val - 2) - 1) + start;
+          }
+          wrapper.scrollTop = move;
+          requestAnimationFrame(animateScroll);
+        } else {
+          wrapper.scrollTop = target;
+          resolve();
+        }
+      };
+      requestAnimationFrame(animateScroll);
+    });
+  };
+  const runAnimationCycle = async () => {
+    wrapper.scrollTop = 0;
+    itemGroup1.classList.remove("is-active");
+    itemGroup2.classList.remove("is-active");
+    if (neighborImg1) neighborImg1.classList.remove("is-scaled-neighbor");
+    if (neighborImg2) neighborImg2.classList.remove("is-scaled-neighbor");
+    setTableActive(0);
+    await wait(config3.startDelay);
+    let dessertsPos = 0;
+    if (dessertsLabel) {
+      const stickyHeaderHeight = 0;
+      dessertsPos = dessertsLabel.parentElement.offsetTop - config3.scrollOffset - stickyHeaderHeight;
+      if (dessertsPos < 0) dessertsPos = 0;
+    }
+    await smoothScrollTo(dessertsPos, config3.scrollSpeed);
+    itemGroup1.classList.add("is-active");
+    if (neighborImg1) neighborImg1.classList.add("is-scaled-neighbor");
+    setTableActive(1);
+    await wait(config3.animSpeed + 500);
+    const maxScroll = wrapper.scrollHeight - wrapper.clientHeight;
+    await smoothScrollTo(maxScroll, config3.scrollSpeed);
+    itemGroup2.classList.add("is-active");
+    if (neighborImg2) neighborImg2.classList.add("is-scaled-neighbor");
+    setTableActive(2);
+    await wait(config3.animSpeed);
+    await wait(config3.pauseEnd);
+    runAnimationCycle();
+  };
+  if (wrapper && dessertsLabel) {
+    wrapper.style.scrollBehavior = "auto";
+    runAnimationCycle();
+  }
+});
