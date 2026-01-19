@@ -29,39 +29,86 @@
 	::-webkit-scrollbar {
 		display: none;
 	}
-	padding-block: 170px;
+	padding-top: 130px;
+	padding-bottom: 170px;
+	@media (max-width: toEm($mobile)) {
+		padding-top: 100px;
+	}
 	// .hero__container
 	&__container {
 		display: flex;
 		align-items: center;
+		@media (max-width: toEm($tablet)) {
+			gap: 15px;
+			align-items: start;
+			flex-direction: column;
+		}
 	}
 }
 .about-hero {
 	display: flex;
 	max-width: 795px;
+	padding-top: 50px;
 	align-items: start;
+	text-wrap: balance;
 	flex-direction: column;
 	> * {
-		margin-bottom: 38px;
+		@include adaptiveValue("margin-bottom", 38, 28);
 	}
 	> *:last-child {
 		margin-bottom: 0;
 	}
+	@media (max-width: toEm($tablet)) {
+		padding-top: 0;
+	}
+	@media (max-width: toEm($mobileSmall)) {
+		text-wrap: pretty;
+	}
 	// .about-hero__title
 	&__title {
 		margin-bottom: 15px;
+		word-break: break-word;
 	}
 	// .about-hero__text
 	&__text {
 		max-width: 410px;
+		&.--text {
+			color: #000;
+			opacity: 0.74;
+		}
+	}
+	// .about-hero__button
+	&__button {
+		@media (max-width: toEm($mobileSmall)) {
+			padding: 0;
+			width: 100%;
+		}
+	}
+	// .about-hero__image
+	&__image {
+		padding-right: 20px;
+		@media (max-width: toEm($tablet)) {
+			display: none;
+		}
 	}
 }
+// Mockup of Hero
 .mockup {
+	min-width: 610px;
 	position: relative;
+	@include adaptiveValue("margin-right", 0, -150, 2, $containerWidth, 991.98);
+	@media (max-width: toEm($tablet)) {
+		align-self: center;
+	}
+	@media (max-width: toEm($mobileSmall)) {
+		min-width: 460px;
+	}
 	// .mockup__rack
 	&__rack {
 		padding-top: 20px;
 		margin-right: -200px;
+		@media (max-width: toEm($mobileSmall)) {
+		}
 	}
 }
 .phone-mockup {
@@ -87,6 +134,19 @@
 		right: 11px;
 		border-radius: 0 35px 0 0;
 	}
+	@media (max-width: toEm($mobileSmall)) {
+		width: 229px;
+		&::before,
+		&::after {
+			top: 82px;
+		}
+		&::before {
+			left: 9px;
+		}
+		&::after {
+			right: 9px;
+		}
+	}
 	// .phone-mockup__decore
 	&__decore {
 		left: 0;
@@ -94,6 +154,9 @@
 		top: 78px;
 		margin: 0 auto;
 		position: absolute;
+		@media (max-width: toEm($mobileSmall)) {
+			top: 82px;
+		}
 	}
 	// .phone-mockup__wrapper
 	&__wrapper {
@@ -108,6 +171,11 @@
 		padding: 0 14px 14px 14px;
 		height: calc(100% - 99px);
 		border-radius: 0 0 40px 40px;
+		@media (max-width: toEm($mobileSmall)) {
+			margin: 0 9px 6px 9px;
+			padding: 0 8px 14px 8px;
+			border-radius: 0 0 35px 35px;
+		}
 	}
 	// .phone-mockup__head
 	&__head {
@@ -129,6 +197,12 @@
 			&:first-child {
 				font-weight: 500;
 				color: rgba($mainColor, 1);
+			}
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			gap: 10px;
+			span {
+				font-size: 14px;
 			}
 		}
 	}
@@ -220,9 +294,20 @@
 	}
 }
 .table-mockup {
-	right: -160px;
 	bottom: -180px;
+	min-width: 677px;
 	position: absolute;
+	@include adaptiveValue("right", -160, -40, 2, $containerWidth, 991.98);
+	@media (max-width: toEm($tablet)) {
+		right: -160px;
+		min-width: auto;
+	}
+	@media (max-width: toEm($mobile)) {
+		right: -100px;
+	}
+	@media (max-width: toEm($mobileSmall)) {
+		bottom: -140px;
+	}
 	// .table-mockup__img-change
 	&__img-change {
 		scale: 0;
@@ -236,6 +321,11 @@
 		&.change-active {
 			scale: 1;
 			opacity: 1;
+		}
+		@media (max-width: toEm($mobileSmall)) {
+			top: -30px;
+			right: 170px;
+			max-width: 150px;
 		}
 	}
 }

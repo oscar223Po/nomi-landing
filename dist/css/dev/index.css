@@ -560,7 +560,8 @@ body {
   display: none;
 }
 .hero {
-  padding-block: 10.625rem;
+  padding-top: 8.125rem;
+  padding-bottom: 10.625rem;
 }
 .hero__container {
   display: flex;
@@ -569,22 +570,30 @@ body {
 .about-hero {
   display: flex;
   max-width: 49.6875rem;
+  padding-top: 3.125rem;
   align-items: start;
+  text-wrap: balance;
   flex-direction: column;
-}
-.about-hero > * {
-  margin-bottom: 2.375rem;
 }
 .about-hero > *:last-child {
   margin-bottom: 0;
 }
 .about-hero__title {
   margin-bottom: 0.9375rem;
+  word-break: break-word;
 }
 .about-hero__text {
   max-width: 25.625rem;
 }
+.about-hero__text.--text {
+  color: #000;
+  opacity: 0.74;
+}
+.about-hero__image {
+  padding-right: 1.25rem;
+}
 .mockup {
+  min-width: 38.125rem;
   position: relative;
 }
 .mockup__rack {
@@ -721,8 +730,8 @@ body {
   transform: scale(1.1) translate(0.3125rem, -0.375rem);
 }
 .table-mockup {
-  right: -10rem;
   bottom: -11.25rem;
+  min-width: 42.3125rem;
   position: absolute;
 }
 .table-mockup__img-change {
@@ -1234,6 +1243,24 @@ body {
   .header__button.button {
     padding-inline: 1.875rem;
   }
+  .hero__container {
+    gap: 0.9375rem;
+    align-items: start;
+    flex-direction: column;
+  }
+  .about-hero {
+    padding-top: 0;
+  }
+  .about-hero__image {
+    display: none;
+  }
+  .mockup {
+    align-self: center;
+  }
+  .table-mockup {
+    right: -10rem;
+    min-width: auto;
+  }
   .whom__wrapper {
     padding-top: 7.1875rem;
     padding-bottom: 5rem;
@@ -1350,6 +1377,12 @@ body {
   .footer__main, .footer__link {
     border-radius: 1rem;
   }
+  .hero {
+    padding-top: 6.25rem;
+  }
+  .table-mockup {
+    right: -6.25rem;
+  }
   .item-decide {
     padding: 0.9375rem;
     border-radius: 0.75rem;
@@ -1452,6 +1485,50 @@ body {
   .link-footer {
     row-gap: 5.625rem;
   }
+  .about-hero {
+    text-wrap: pretty;
+  }
+  .about-hero__button {
+    padding: 0;
+    width: 100%;
+  }
+  .mockup {
+    min-width: 28.75rem;
+  }
+  .phone-mockup {
+    width: 14.3125rem;
+  }
+  .phone-mockup::before, .phone-mockup::after {
+    top: 5.125rem;
+  }
+  .phone-mockup::before {
+    left: 0.5625rem;
+  }
+  .phone-mockup::after {
+    right: 0.5625rem;
+  }
+  .phone-mockup__decore {
+    top: 5.125rem;
+  }
+  .phone-mockup__wrapper {
+    margin: 0 0.5625rem 0.375rem 0.5625rem;
+    padding: 0 0.5rem 0.875rem 0.5rem;
+    border-radius: 0 0 2.1875rem 2.1875rem;
+  }
+  .phone-mockup__head {
+    gap: 0.625rem;
+  }
+  .phone-mockup__head span {
+    font-size: 0.875rem;
+  }
+  .table-mockup {
+    bottom: -8.75rem;
+  }
+  .table-mockup__img-change {
+    top: -1.875rem;
+    right: 10.625rem;
+    max-width: 9.375rem;
+  }
   .body-tabs-whom__decore::before {
     translate: 0 25%;
   }
@@ -1507,6 +1584,9 @@ body {
   }
   .link-footer {
     padding-inline: 1.125rem;
+  }
+  .about-hero > * {
+    margin-bottom: 1.75rem;
   }
   .whom__title:not(:last-child) {
     margin-bottom: 1.875rem;
@@ -1630,6 +1710,9 @@ body {
   }
   .main-footer__below:not(:last-child) {
     margin-bottom: clamp( 2.1875rem , 1.9184417040375rem  +  1.3452914798vw , 3.125rem );
+  }
+  .about-hero > * {
+    margin-bottom: clamp( 1.75rem , 1.5706278026875rem  +  0.8968609865vw , 2.375rem );
   }
   .whom__title:not(:last-child) {
     margin-bottom: clamp( 1.875rem , 0.97813901345rem  +  4.4843049327vw , 5rem );
@@ -2023,6 +2106,12 @@ body {
   .link-footer__title.--subtitle {
     font-size: clamp( 1.6875rem , -0.13179427565625rem  +  2.9344047673vw , 2.5rem );
   }
+  .mockup {
+    margin-right: clamp( -9.375rem , -30.36685716671875rem  +  33.8585167713vw , 6.25e-8rem );
+  }
+  .table-mockup {
+    right: clamp( -10rem , 14.29348562141875rem  +  -27.0868132364vw , -2.5rem );
+  }
   .whom__img-decore {
     bottom: clamp( -12.5rem , 13.8179427565375rem  +  -29.3440476728vw , -4.375rem );
   }
@@ -2163,6 +2252,15 @@ body {
   }
   .link-footer__title.--subtitle {
     font-size: 2.5rem;
+  }
+  .about-hero > * {
+    margin-bottom: 2.375rem;
+  }
+  .mockup {
+    margin-right: 6.25e-8rem;
+  }
+  .table-mockup {
+    right: -10rem;
   }
   .whom__title:not(:last-child) {
     margin-bottom: 5rem;
