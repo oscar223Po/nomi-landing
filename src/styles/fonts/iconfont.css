@@ -1,36 +1,35 @@
-@font-face {
-	font-family: 'iconfont';
+@font-face { 
+	font-family: "iconfont"; 
 	font-display: swap;
-	src: url('/Users/sell/Main/nomi-landing/src/assets/svgicons/preview/iconfont.woff2?7a29cf19d4af8aae0a582a816760eaea')
-		format('woff2');
+	src: url("/Users/sell/Main/nomi-landing/src/assets/svgicons/preview/iconfont.woff2?7a29cf19d4af8aae0a582a816760eaea") format("woff2"); 
+} 
+[class*="--icon-"]::before{
+	font-family: iconfont; 
 }
-[class*='--icon-']::before {
-	font-family: iconfont;
-}
-[class*='--icon-tg']::before {
-	content: '\f101';
-}
-[class*='--icon-telegram']::before {
-	content: '\f102';
-}
-[class*='--icon-plus']::before {
-	content: '\f103';
-}
-[class*='--icon-minus']::before {
-	content: '\f104';
-}
-[class*='--icon-logo']::before {
-	content: '\f105';
-}
-[class*='--icon-link']::before {
-	content: '\f106';
-}
-[class*='--icon-check']::before {
-	content: '\f107';
-}
-[class*='--icon-cancel']::before {
-	content: '\f108';
-}
-[class*='--icon-arrow']::before {
-	content: '\f109';
-}
+	[class*="--icon-tg"]::before { 
+		content: "\f101"; 
+	} 
+	[class*="--icon-telegram"]::before { 
+		content: "\f102"; 
+	} 
+	[class*="--icon-plus"]::before { 
+		content: "\f103"; 
+	} 
+	[class*="--icon-minus"]::before { 
+		content: "\f104"; 
+	} 
+	[class*="--icon-logo"]::before { 
+		content: "\f105"; 
+	} 
+	[class*="--icon-link"]::before { 
+		content: "\f106"; 
+	} 
+	[class*="--icon-check"]::before { 
+		content: "\f107"; 
+	} 
+	[class*="--icon-cancel"]::before { 
+		content: "\f108"; 
+	} 
+	[class*="--icon-arrow"]::before { 
+		content: "\f109"; 
+	} 

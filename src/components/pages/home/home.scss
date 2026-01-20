@@ -67,7 +67,9 @@
 	// .about-hero__title
 	&__title {
 		margin-bottom: 15px;
-		word-break: break-word;
+		&.--title {
+			@include adaptiveValue("font-size", 57, 25);
+		}
 	}
 	// .about-hero__text
 	&__text {
@@ -361,6 +363,7 @@
 		display: none;
 	}
 	position: relative;
+	transform: translateZ(0);
 	@media (min-width: toEm($tablet)) {
 		padding-inline: 25px;
 	}
@@ -379,8 +382,8 @@
 			min-height: calc(100vh - 50px);
 		}
 		@media (max-width: toEm($tablet)) {
-			padding-top: 115px;
 			padding-bottom: 80px;
+			@include adaptiveValue("padding-top", 115, 55, 0, 991.98, 320);
 		}
 	}
 	// .whom__container
@@ -420,6 +423,7 @@
 		align-items: center;
 		background-color: $grayColor;
 		grid-template-columns: repeat(2, 1fr);
+		will-change: transform, opacity, filter;
 		box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 	}
 	// .whom__decore
