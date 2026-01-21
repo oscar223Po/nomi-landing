@@ -837,15 +837,22 @@ body {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.04) 0rem 0.1875rem 0.3125rem;
 }
+.whom__wrap-navigation {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+}
 .whom__navigation {
-  gap: 1.4375rem;
+  gap: 6.25rem;
   z-index: 1;
   width: 100%;
+  justify-self: center;
+  align-self: center;
   display: flex;
   overflow: auto;
   position: relative;
   white-space: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.14);
 }
 .whom__subtitle {
@@ -2257,7 +2264,7 @@ body {
   .table-mockup {
     right: clamp( -10rem , 14.29348562141875rem  +  -27.0868132364vw , -2.5rem );
   }
-  .whom__navigation:not(:last-child) {
+  .whom__wrap-navigation:not(:last-child) {
     margin-bottom: clamp( 2.5rem , -3.097828540475rem  +  9.0289377455vw , 5rem );
   }
   .whom__img-decore {
@@ -2415,7 +2422,7 @@ body {
   .whom__title:not(:last-child) {
     margin-bottom: 5rem;
   }
-  .whom__navigation:not(:last-child) {
+  .whom__wrap-navigation:not(:last-child) {
     margin-bottom: 5rem;
   }
   .whom__subtitle {
