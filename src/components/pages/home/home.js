@@ -1,3 +1,17 @@
+import Lenis from '@studio-freight/lenis'
+
+const lenis = new Lenis({
+	lerp: 0.08,
+	smoothWheel: true,
+	smoothTouch: false
+})
+
+function raf(time) {
+	lenis.raf(time)
+	requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
 document.addEventListener('DOMContentLoaded', () => {
 	// --- КОНФИГУРАЦИЯ ---
 	const config = {

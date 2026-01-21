@@ -139,5 +139,5 @@ INIT
 ---------- */
 
 window.addEventListener('load', () => {
-	initWhomAnimations()
+	// initWhomAnimations()
 })
